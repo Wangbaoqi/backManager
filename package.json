@@ -16,6 +16,7 @@
     "devmock": "npm run dev & npm run mockserve"
   },
   "dependencies": {
+    "async-validator": "^3.0.2",
     "axios": "^0.19.0",
     "json-server": "^0.15.0",
     "vue": "^2.5.2",

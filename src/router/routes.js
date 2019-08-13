@@ -1,14 +1,9 @@
-
-
-
 import Layout from '@/views/Layout'
-
 import DashBoard from '@/views/dashboard/index'
 import Agent from '@/views/agent/index'
 import MyCruise from '@/views/mycruise/index'
 import Help from '@/views/help/index'
 import AgentContent from '@/components/agent/AgentContent'
-
 
 const dashboardRoute = {
   path: '/',

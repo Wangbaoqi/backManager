@@ -1,7 +1,6 @@
 <template>
   <section class="tw-header">
     <img src="../../assets/logo/logo.svg" alt="logo" class="tw-logo" />
-
     <summary class="header-avater">
       <img src="../../assets/logo.png" class="tw-avatar" />
       <span class="angle" :class="menuShow ? 'icon-angle-up' : 'icon-angle-down'" @click="showMenu()"></span>
@@ -11,7 +10,6 @@
       </div>
       <div class="mask" v-show="menuShow" @click="closeAvatar()"></div>
     </summary>
-    
   </section>
 </template>
 
