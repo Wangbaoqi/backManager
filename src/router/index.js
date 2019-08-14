@@ -4,6 +4,18 @@ import routes from './routes'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  next()
+})
+
+router.afterEach((to, from) => {
+
+})
+export default router
+
+
+

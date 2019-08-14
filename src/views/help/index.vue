@@ -12,6 +12,21 @@
         <button @click="submit">submit</button>
       </w-form-item>
     </w-form>
+
+    vuex 实践
+    <button @click="increase">submit normal</button>
+    <button @click="submitvueasync">submit asnyc</button>
+
+    <div>normal {{$store.state.count}}  </div> 
+
+    <div>normal {{count}}  </div> 
+
+    <div>余额normal {{$store.getters.getCount}}  </div> 
+    <div>余额special {{getCount}}  </div> 
+
+
+    
+
   </div>
 </template>
 
@@ -19,8 +34,14 @@
   import WForm from '@/components/help/WForm'
   import WFormItem from '@/components/help/WFormItem'
   import WInput from '@/components/help/WInput'
+
+  import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
   export default {
     components: { WForm, WFormItem, WInput },
+    computed: {
+      ...mapState(['count']),
+      ...mapGetters(['getCount'])
+    },
     data() {
       return {
         rulesForm: {
@@ -36,7 +57,14 @@
         }
       }
     },
+    created() {
+    },
+    mounted() {
+
+    },
     methods: {
+      ...mapMutations(['increase']),
+      ...mapActions(['increaseAynsc']),
       submit() {
         this.$refs.wform.validate(valid => {
           if(valid) {
@@ -46,6 +74,11 @@
             return false
           }
         })
+      },
+      
+      submitvueasync() {
+        // this.$store.dispatch('increaseAynsc')
+        this.increaseAynsc()
       }
     }
   }

@@ -28,7 +28,6 @@ export default {
 
   },
   beforeMount() {
-    debugger
     const agentType = this.$route.params.title;
     const agentRequestParams = agentType == 'all' ? null :{
       type: agentType
